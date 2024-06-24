@@ -720,8 +720,8 @@ module.exports = class LiarsDiceGame extends Game {
     const simplifiedPlayers = this.simplifyPlayers(this.randomizedPlayers);
     info.extraInfo = {
       randomizedPlayers: simplifiedPlayers,
-      isTheFlyingDutchman:
-        this.chatName == "The Flying Dutchman" ? true : false,
+      isTheFlyingDutchman: this.chatName == "The Flying Dutchman" ? true : false,
+      whoseTurnIsIt: this.randomizedPlayersCopy?.[this.currentIndex]?.user.id ?? 0,
     };
     return info;
   }
